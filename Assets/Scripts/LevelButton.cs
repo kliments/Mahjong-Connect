@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelButton : MonoBehaviour
+public class LevelButton : GenericButton
 {
+    public int layoutIndex;
     public bool isFinished;
     public char[][] levelLayout;
 
@@ -20,6 +21,11 @@ public class LevelButton : MonoBehaviour
         
     }
 
+    public override void Awake()
+    {
+        base.Awake();
+    }
+
     public void SetNameOfText(string text)
     {
         GetComponentInChildren<Text>().text += text;
@@ -27,6 +33,6 @@ public class LevelButton : MonoBehaviour
 
     public void SelectThisButton()
     {
-        GameManager.instance.StartThisLevel(levelLayout);
+        GameManager.instance.StartThisLevel(levelLayout, layoutIndex);
     }
 }

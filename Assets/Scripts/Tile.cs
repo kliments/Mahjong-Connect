@@ -8,7 +8,7 @@ public class Tile : MonoBehaviour
     public string tileName;
     public int id;
 
-    public Dictionary<Tile, GameManager.Direction> directions = new Dictionary<Tile, GameManager.Direction>();
+    public Dictionary<Tile, Direction> directions = new Dictionary<Tile, Direction>();
     // Start is called before the first frame update
     void Start()
     {
